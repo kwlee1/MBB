@@ -1,0 +1,11 @@
+<h1>Welcome {{user.name}}!</h1>
+<p><a [routerLink]="['']">Logout</a></p>
+<p><a [routerLink]="['/newq']">Add a Question</a></p>
+
+<table>
+  <th><tr><td>Question</td><td>Answers</td><td>Action</td></tr></th>
+  <tr *ngFor="let que of questions"><td>{{que.content}}</td>
+    <td>{{que.answers.length}}</td>
+    <td><a [routerLink]="['/que',que._id]">Show</a> <a [routerLink]="['/que',que._id,'new_answer']">Answer</a></td></tr>  
+  
+</table>

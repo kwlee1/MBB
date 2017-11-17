@@ -20,7 +20,7 @@ export class UserComponent implements OnInit {
 
   onSubmit(){
     this._apiService.user = this.user; 
-    // this._router.navigateByUrl('/players/list')
+    this._router.navigateByUrl('/dashboard')
   }
 
 }

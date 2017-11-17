@@ -1,0 +1,16 @@
+<p><a [routerLink]="['/dashboard']">Home</a></p>
+<p><a [routerLink]="['']">Logout</a></p>
+<h1>New Question</h1>
+<form (submit)="onSubmit()" #formData='ngForm'>
+  Question: <input type="text" name="quecontent" 
+  required
+  minlength="10"
+  [(ngModel)]='newQue.content'
+  #content="ngModel">
+  <div *ngIf="!content.valid">Question must be at least 10 characters. </div><br>
+  Description (optional): <input type="text" name="quedescription" 
+  [(ngModel)]='newQue.description'
+  #description="ngModel">
+  <br><input [disabled]="formData.invalid" type="submit" value="Add Note">
+</form>
+<p><a [routerLink]="['/dashboard']">Cancel</a></p>

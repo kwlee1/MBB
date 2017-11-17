@@ -1,0 +1,15 @@
+<p><a [routerLink]="['/que',que]">Go back to Question</a></p>
+<h1>New Answer</h1>
+<form (submit)="onSubmit()" #formData='ngForm'>
+  Your Answer: <input type="text" name="anscontent" 
+  required
+  minlength="5"
+  [(ngModel)]='newAns.content'
+  #content="ngModel">
+  <div *ngIf="!content.valid">Answer must be at least 5 characters. </div><br>
+  Supporting details (optional): <input type="text" name="ansdetails" 
+  [(ngModel)]='newAns.details'
+  #details="ngModel">
+  <br><input [disabled]="formData.invalid" type="submit" value="Submit">
+</form>
+<p><a [routerLink]="['/dashboard']">Cancel</a></p>

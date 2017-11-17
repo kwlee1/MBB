@@ -7,11 +7,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { ApiService } from './api.service';
+import { DashComponent } from './dash/dash.component';
+import { QuestionComponent } from './question/question.component';
+import { NewqComponent } from './newq/newq.component';
+import { ShowComponent } from './question/show/show.component';
+import { NewansComponent } from './question/newans/newans.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    DashComponent,
+    QuestionComponent,
+    NewqComponent,
+    ShowComponent,
+    NewansComponent
   ],
   imports: [
     BrowserModule,
