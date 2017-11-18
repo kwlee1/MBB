@@ -10,8 +10,8 @@ module.exports = function(app){
 	app.post("/newquestions", function(req, res){
 		question.create(req, res);
 	});
-	app.get("/show", function(req, res){
-		console.log("at routes", req);
+	app.get("/show/:id", function(req, res){
+		console.log(req.params.id);
 		answer.show(req, res);
 	});
 	app.post("/newans", function(req, res){

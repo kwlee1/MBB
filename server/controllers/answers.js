@@ -1,10 +1,10 @@
 var mongoose=require('mongoose');
 var Answer=mongoose.model("Answer");
+var Question=mongoose.model("Question");
 module.exports={
 	show: function(req, res){
 		console.log("at controller")
-		console.log(Answer.findById(req))
-		Answer.findOne({_id:req}), (function(err, results){
+		Question.findOne({_id:req.params.id}).populate('answers').exec(function(err, results){
 			if(err){
 				res.json('error');
 			}else{

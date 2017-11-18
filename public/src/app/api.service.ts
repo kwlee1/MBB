@@ -22,7 +22,7 @@ export class ApiService {
   
     show(data, callback){
 		console.log("at service", data)
-		this._http.get('/show', data).subscribe(
+		this._http.get('/show/'+data).subscribe(
 			(res)=>{
 				callback(res.json());
 			},
